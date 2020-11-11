@@ -1,3 +1,26 @@
-h1 {
-    color: blue;
+body {
+    background-color:black;
+    color: white;
+    text-align: center;
+}
+
+/* Default CSS: Extra Small Devices (portrait phones, up to 575px); */
+
+/* Small Devices: landscape phones, 576px and up */
+@media (min-width: 576px) {
+
+}
+/* Medium Devices: tablets, 768px and up; */
+@media (min-width: 768px) {
+
+}
+
+/* Large Devices: desktops/laptops, 992px and up; */
+@media (min-width: 992px) {
+
+}
+
+/* Extra Large Devices: wide-screen desktops, 1200px and up; */
+@media (min-width: 1200px) {
+
 }

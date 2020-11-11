@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, send_file
 import requests
 import os
 from dotenv import load_dotenv, find_dotenv
@@ -7,6 +7,10 @@ app = Flask(__name__)
 load_dotenv(find_dotenv())
 zendesk_username = os.environ['ZENDESK_USERNAME']
 zendesk_password = os.environ['ZENDESK_PASSWORD']
+
+@app.route('/favicon.ico')
+def icon():
+    return send_file('static/zendesk-favicon.ico')
 
 @app.route('/')
 def ticket_list():
