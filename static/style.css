@@ -1,9 +1,120 @@
 body {
-    background-color:black;
-    color: white;
+    font-family: 'Commissioner', sans-serif;
+    padding: 40px;
+    padding-top: 80px;
+}
+
+hr {
+    width: 50%;
+}
+
+h1 {
+    font-family: 'Lato', sans-serif;
+    font-size: 3em;
+    margin-bottom: 40px;
     text-align: center;
 }
 
+h2 {
+    font-family: 'Lato', sans-serif;
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+p {
+    margin: 0px;
+}
+
+.page{
+    width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.item {
+    width: 180px;
+    margin: 10px;
+    padding: 10px;
+    height: 250px;
+    border: 1px solid #cccccc;
+    border-radius: 15px;
+    float: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+}
+
+.urgent {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-color: #f5c6cb;
+}
+
+.high {
+    background-color:#ffe9bf;
+    color: #72471c;
+    border-color: #f5e3c6;
+}
+
+.normal {
+    background-color: #fff8cc;
+    color: #856404;
+    border-color: #ffeeba;
+}
+
+.low {
+    background-color: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+}
+
+.overlay {
+    width:100%;
+    height:100%;    
+    position:absolute;
+    left:0;
+    top:0;
+    background:linear-gradient(transparent 200px, white);
+}
+
+.clearfloat {
+    clear: both;
+}
+
+.spacing {
+    height: 70px;
+}
+
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill=' %23ccc' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+    height: 30px;
+    width: 30px;
+}
+   
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ccc' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+    height: 30px;
+    width: 30px;
+}
+
+.carousel-control-next, .carousel-control-prev {
+    position: fixed;
+}
+
+.carousel-indicators li {
+    background-color: #cccccc;
+    height: 5px;
+}
+
+.popup {
+    width: 40%
+}
+
+hr {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
 /* Default CSS: Extra Small Devices (portrait phones, up to 575px); */
 
 /* Small Devices: landscape phones, 576px and up */
