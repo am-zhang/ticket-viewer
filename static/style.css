@@ -27,7 +27,7 @@ p {
 }
 
 .page{
-    width: 1000px;
+    width: 200px;
     margin-right: auto;
     margin-left: auto;
 }
@@ -108,30 +108,54 @@ p {
 }
 
 .popup {
-    width: 40%
+    width: 80%
 }
 
 hr {
     margin-top: 0.5em;
     margin-bottom: 0.5em;
 }
-/* Default CSS: Extra Small Devices (portrait phones, up to 575px); */
 
-/* Small Devices: landscape phones, 576px and up */
 @media (min-width: 576px) {
-
+    .page{
+        width: 80%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .popup {
+        width: 60%
+    }
 }
-/* Medium Devices: tablets, 768px and up; */
+
 @media (min-width: 768px) {
-
+    .page{
+        width: 80%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .popup {
+        width: 60%
+    }
 }
 
-/* Large Devices: desktops/laptops, 992px and up; */
 @media (min-width: 992px) {
-
+    .page{
+        width: 80%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .popup {
+        width: 40%
+    }
 }
 
-/* Extra Large Devices: wide-screen desktops, 1200px and up; */
 @media (min-width: 1200px) {
-
+    .page{
+        width: 1000px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .popup {
+        width: 40%
+    }
 }

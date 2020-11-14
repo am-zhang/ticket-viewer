@@ -18,11 +18,13 @@ def ticket_list():
     url = 'https://azic.zendesk.com/api/v2/tickets.json'
     while url:
         r = requests.get(url, auth=(zendesk_username, zendesk_password))
+        if r.status_code != 200:
+            return render_template('error.jinja2')
         response_json = r.json()
         tickets += response_json['tickets']
         url = response_json['next_page']
     return render_template('index.jinja2', tickets=tickets)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
 
