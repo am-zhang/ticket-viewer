@@ -26,9 +26,14 @@ In order to populate tickets from the users account, a .env file must be created
 `ZENDESK_SUBDOMAIN=usersubdomain`
 
 
-Finally, the viewer can be run with the following command:
+The viewer can be run with the following command:
 
 `python viewer.py`
 
 
 You should then be able to access the Flask app at: http://localhost:5000/
+
+
+Finally, test cases can be run with the following command:
+
+`python viewer.test.py`
