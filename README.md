@@ -5,11 +5,13 @@ This ticket viewer connects to Zendesk API and requests all tickets from an acco
 
 The program can be run in a virtual environment with the following commands:
 
-`sudo apt-get install python3-venv`
+```
+sudo apt-get install python3-venv
 
-`python3 -m venv venv`
+python3 -m venv venv
 
-`source venv/bin/activate`
+source venv/bin/activate
+```
 
 
 The program also relies on a few packages which can be installed with the following command:
@@ -19,11 +21,13 @@ The program also relies on a few packages which can be installed with the follow
 
 In order to populate tickets from the users account, a .env file must be created in the following format:
 
-`ZENDESK_USERNAME=user@email.com`
+```
+ZENDESK_USERNAME=user@email.com
 
-`ZENDESK_PASSWORD=userpassword`
+ZENDESK_PASSWORD=userpassword
 
-`ZENDESK_SUBDOMAIN=usersubdomain`
+ZENDESK_SUBDOMAIN=usersubdomain
+```
 
 
 The viewer can be run with the following command:
