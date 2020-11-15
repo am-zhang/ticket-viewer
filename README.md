@@ -37,3 +37,6 @@ You should then be able to access the Flask app at: http://localhost:5000/
 Finally, test cases can be run with the following command:
 
 `python viewer.test.py`
+
+
+Note: Individual ticket view is powered by Fancybox, a Javascript lightbox library licensed under the GPLv3 license. More documentation can be found here: https://fancyapps.com/fancybox/3/.
