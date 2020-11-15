@@ -45,7 +45,7 @@
                             <p>Status: {{t['status']}}</p>
                             <hr>
                             <p>{{t['description']}}</p>
-                            <a data-fancybox data-src="#popup-{{t['id']}}" href="javascript:;" class="overlay"></a>
+                            <a data-fancybox data-src="#popup-{{t['id']}}" href="javascript:;" class="overlay fade-{{t['priority']}}"></a>
 
                             <div style="display:none;" id="popup-{{t['id']}}" class="popup">
                                 <h2>Ticket #{{t['id']}}</h2>

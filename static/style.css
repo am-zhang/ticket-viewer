@@ -78,6 +78,22 @@ p {
     background:linear-gradient(transparent 200px, white);
 }
 
+.fade-urgent {
+    background:linear-gradient(transparent 200px,#f8d7da);
+}
+
+.fade-high {
+    background:linear-gradient(transparent 200px, #ffe9bf);
+}
+
+.fade-normal {
+    background:linear-gradient(transparent 200px, #fff8cc);
+}
+
+.fade-low {
+    background:linear-gradient(transparent 200px, #c3e6cb);
+}
+
 .clearfloat {
     clear: both;
 }

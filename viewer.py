@@ -19,12 +19,12 @@ def ticket_list():
     while url:
         r = requests.get(url, auth=(zendesk_username, zendesk_password))
         if r.status_code != 200:
-            return render_template('error.jinja2')
+            return render_template('error.jinja2', code=r.status_code)
         response_json = r.json()
         tickets += response_json['tickets']
         url = response_json['next_page']
     return render_template('index.jinja2', tickets=tickets)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
 
