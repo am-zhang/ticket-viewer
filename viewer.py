@@ -5,8 +5,9 @@ from dotenv import load_dotenv, find_dotenv
 
 app = Flask(__name__)
 load_dotenv(find_dotenv())
-zendesk_username = os.environ['ZENDESK_USERNAME']
-zendesk_password = os.environ['ZENDESK_PASSWORD']
+app.config['zendesk_username'] = os.environ['ZENDESK_USERNAME']
+app.config['zendesk_password'] = os.environ['ZENDESK_PASSWORD']
+app.config['zendesk_subdomain'] = os.environ['ZENDESK_SUBDOMAIN']
 
 @app.route('/favicon.ico')
 def icon():
@@ -15,9 +16,9 @@ def icon():
 @app.route('/')
 def ticket_list():
     tickets = []
-    url = 'https://azic.zendesk.com/api/v2/tickets.json'
+    url = 'https://' + app.config['zendesk_subdomain'] + '.zendesk.com/api/v2/tickets.json'
     while url:
-        r = requests.get(url, auth=(zendesk_username, zendesk_password))
+        r = requests.get(url, auth=(app.config['zendesk_username'], app.config['zendesk_password']))
         if r.status_code != 200:
             return render_template('error.jinja2', code=r.status_code)
         response_json = r.json()
