@@ -22,7 +22,7 @@ class ViewerTestCases(unittest.TestCase):
         tester = app.test_client(self)
         response = tester.get('/')
         self.assertTrue(b'Unable to reach Zendesk API' in response.data) # checks that error page has loaded
-        app.config['zendesk_username'] = correct_username
+        app.config['zendesk_username'] = correct_username # resetting app.config to the correct username and password
         app.config['zendesk_password'] = correct_password
 
     def test_addJson(self):
@@ -32,11 +32,12 @@ class ViewerTestCases(unittest.TestCase):
         tester = app.test_client(self)
         response = tester.get('/')
         self.assertEqual(response.data.count(b'class="item'), 103) # checks that there are now 103 tickets
+        self.assertTrue(b'My printer is on fire!' in response.data) # checks that "My printer is on fire!" has been loaded onto page
 
         response_json = r.json()
         delete_id = response_json['ticket']['id']
         delete_url = 'https://' + app.config['zendesk_subdomain'] + '.zendesk.com/api/v2/tickets/' + str(delete_id) + '.json'
-        requests.delete(delete_url, auth=(app.config['zendesk_username'], app.config['zendesk_password']))
+        requests.delete(delete_url, auth=(app.config['zendesk_username'], app.config['zendesk_password'])) # deleting the test JSON we added
 
 if __name__ == '__main__':
     unittest.main()
