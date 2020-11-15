@@ -11,12 +11,13 @@ class ViewerTestCases(unittest.TestCase):
         self.assertEqual(response.status_code, 200) # checks that server is live
         self.assertTrue(b'I need help' in response.data) # checks that "I need help" has been loaded onto page
         self.assertEqual(response.data.count(b'class="item'), 102) # checks that there are 102 tickets
+        self.assertEqual(response.data.count(b'class="popup'), 102) # checks that there are 102 popup panels
         self.assertEqual(response.data.count(b'class="carousel-item'), 5) # checks that there are 5 pages
 
     def test_error(self):
         correct_username = app.config['zendesk_username']
         correct_password = app.config['zendesk_password']
-        app.config['zendesk_username'] = 'wrong_username'
+        app.config['zendesk_username'] = 'wrong_username' # assigns an incorrect username and password
         app.config['zendesk_password'] = 'wrong_password'
         tester = app.test_client(self)
         response = tester.get('/')

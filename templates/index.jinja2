@@ -20,7 +20,7 @@
     <h1>Tickets</h1>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval=false>
         <ol class="carousel-indicators">
-            {% for i in range((tickets|length + 24) // 25) %}
+            {% for i in range((tickets|length + 24) // 25) %} {# loops through pages for indicators #}
             {% if loop.first %}
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             {% else %}
@@ -29,14 +29,14 @@
             {% endfor %}
         </ol>
         <div class="carousel-inner">
-            {% for i in range(0, tickets|length, 25) %}
+            {% for i in range(0, tickets|length, 25) %} {# loops through pages to populate tickets #}
             {% if loop.first %}
             <div class="carousel-item active">
                 {% else %}
                 <div class="carousel-item">
                     {% endif %}
                     <div class="page">
-                        {% for t in tickets[i:i + 25] %}
+                        {% for t in tickets[i:i + 25] %} {# loops through tickets on page #}
                         <div class="item {{t['priority']}}">
                             <p>#{{t['id']}}</p>
                             <p><strong>{{t['subject']}}</strong></p>
