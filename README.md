@@ -1,4 +1,4 @@
-# zendesk-ticket-viewer-f20
+# ticket-viewer
 
 This ticket viewer connects to Zendesk API and requests all tickets from an account. It displays all the tickets on a web page and allows the user to page through tickets. 
 
